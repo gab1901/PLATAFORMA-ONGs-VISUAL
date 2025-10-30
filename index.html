@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Entrega II — CSS3 (Design System e Responsividade)</title>
+
+  <!-- Fonte (Google Fonts) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS modular -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand">Meu Projeto</a>
+
+      <nav class="main-nav" aria-label="Menu principal">
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li class="has-dropdown">
+            <button class="dropdown-toggle" aria-expanded="false">Projetos ▾</button>
+            <ul class="dropdown" aria-label="submenu">
+              <li><a href="#proj1">Projeto 1</a></li>
+              <li><a href="#proj2">Projeto 2</a></li>
+              <li><a href="#proj3">Projeto 3</a></li>
+            </ul>
+          </li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn btn-ghost hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container main-grid" id="home">
+    <!-- destaque -->
+    <section class="hero card full-bleed">
+      <div class="hero-content">
+        <h1>Design System & Layout Responsivo</h1>
+        <p>Entrega II - CSS3: variáveis, grid 12 colunas, flex, componentes, acessibilidade.</p>
+        <div>
+          <a class="btn btn-primary" href="#proj1">Ver Projetos</a>
+          <button class="btn btn-outline" id="open-modal">Abrir modal</button>
+        </div>
+      </div>
+      <img src="images/project1.jpg" alt="Imagem de destaque" class="hero-img">
+    </section>
+
+    <!-- cards de projetos -->
+    <section class="projects" aria-label="Projetos">
+      <h2>Projetos</h2>
+      <div class="grid grid-12">
+        <article class="card col-span-4">
+          <img src="images/project1.jpg" alt="Projeto 1">
+          <div class="card-body">
+            <h3>Projeto 1</h3>
+            <p>Resumo do projeto — responsividade, componentes e acessibilidade.</p>
+            <div class="badges">
+              <span class="badge">HTML</span>
+              <span class="badge">CSS</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-sm" href="#">Ver</a>
+              <button class="btn btn-sm btn-outline">Código</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card col-span-4">
+          <img src="images/project2.jpg" alt="Projeto 2">
+          <div class="card-body">
+            <h3>Projeto 2</h3>
+            <p>Descrição curta do projeto.</p>
+            <div class="badges"><span class="badge">JS</span></div>
+            <div class="card-actions">
+              <a class="btn btn-sm" href="#">Ver</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card col-span-4">
+          <img src="images/project3.jpg" alt="Projeto 3">
+          <div class="card-body">
+            <h3>Projeto 3</h3>
+            <p>Descrição curta do projeto.</p>
+            <div class="badges"><span class="badge">A11Y</span></div>
+            <div class="card-actions">
+              <a class="btn btn-sm" href="#">Ver</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- formulário -->
+    <section id="contato" class="contact card col-span-12">
+      <h2>Contato</h2>
+      <form id="contactForm" novalidate>
+        <div class="form-grid">
+          <label>
+            Nome
+            <input type="text" name="nome" required minlength="2" placeholder="Seu nome">
+            <small class="field-error" aria-live="polite"></small>
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" required placeholder="seu@email.com">
+            <small class="field-error" aria-live="polite"></small>
+          </label>
+
+          <label class="full">
+            Mensagem
+            <textarea name="mensagem" rows="6" required minlength="10"></textarea>
+            <small class="field-error" aria-live="polite"></small>
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="reset" class="btn btn-outline">Limpar</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 — Seu Nome. Repositório público no GitHub para avaliação.</p>
+      <p class="muted">Checklist: design system, grid 12 col, 5 breakpoints, accesibilidade</p>
+    </div>
+  </footer>
+
+  <!-- alerts / modals / toasts -->
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <div id="modal" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <header>
+        <h3 id="modal-title">Modal de Exemplo</h3>
+        <button class="btn btn-ghost modal-close" aria-label="Fechar">✕</button>
+      </header>
+      <div class="modal-body">
+        <p>Este é um modal para demonstrar componente.</p>
+      </div>
+      <footer>
+        <button class="btn btn-primary modal-close">Fechar</button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
