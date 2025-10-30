@@ -1,0 +1,52 @@
+/* variables.css */
+:root{
+  /* --- Paleta (mínimo 8 cores) --- */
+  --color-primary: #0b5cff;      /* Primário */
+  --color-primary-700: #0849d1;
+  --color-secondary: #ff6b6b;    /* Secundário */
+  --color-accent: #ffd166;       /* Acento */
+  --color-success: #2ecc71;
+  --color-warning: #f39c12;
+  --color-danger: #e74c3c;
+  --color-neutral-900: #0b0f17;
+  --color-neutral-700: #2f3542;
+  --color-neutral-500: #6b7280;
+  --color-neutral-100: #f3f4f6;
+  --color-white: #ffffff;
+
+  /* Tipografia */
+  --font-family-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --fs-xxl: 2.25rem; /* 36px */
+  --fs-xl: 1.5rem;   /* 24px */
+  --fs-lg: 1.125rem; /* 18px */
+  --fs-md: 1rem;     /* 16px */
+  --fs-sm: 0.875rem; /* 14px */
+
+  /* Peso fonte */
+  --fw-regular: 400;
+  --fw-medium: 600;
+  --fw-bold: 700;
+
+  /* Espaçamento modular (8px base) */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+
+  /* Layout */
+  --container-max: 1200px;
+  --radius: 12px;
+  --shadow-sm: 0 2px 8px rgba(11,15,23,0.06);
+  --shadow-md: 0 8px 24px rgba(11,15,23,0.08);
+
+  /* Grid */
+  --grid-columns: 12;
+  --gutter: 16px;
+}
+
+/* Utility: reduce motion if user prefers */
+@media (prefers-reduced-motion: reduce){
+  :root { scroll-behavior: auto; }
+}
