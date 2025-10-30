@@ -1,0 +1,89 @@
+/* layout.css */
+
+/* Grid 12 col system using CSS Grid */
+.grid{
+  display:grid;
+  gap:var(--gutter);
+}
+.grid-12{
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+}
+
+/* column spans (col-span-N) */
+.col-span-1 { grid-column: span 1; }
+.col-span-2 { grid-column: span 2; }
+.col-span-3 { grid-column: span 3; }
+.col-span-4 { grid-column: span 4; }
+.col-span-5 { grid-column: span 5; }
+.col-span-6 { grid-column: span 6; }
+.col-span-7 { grid-column: span 7; }
+.col-span-8 { grid-column: span 8; }
+.col-span-9 { grid-column: span 9; }
+.col-span-10 { grid-column: span 10; }
+.col-span-11 { grid-column: span 11; }
+.col-span-12 { grid-column: span 12; }
+
+/* Header */
+.site-header{
+  background:linear-gradient(90deg,var(--color-white),#fbfdff);
+  border-bottom:1px solid rgba(11,15,23,0.04);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--space-3);
+  padding:var(--space-2) 0;
+}
+.brand{font-weight:var(--fw-bold);font-size:var(--fs-lg)}
+
+/* nav */
+.main-nav .nav-list{
+  list-style:none;margin:0;padding:0;display:flex;gap:var(--space-3);align-items:center;
+}
+.nav-list a, .dropdown-toggle{padding:.5rem 0;border:0;background:transparent}
+.has-dropdown{position:relative}
+.dropdown{
+  position:absolute;left:0;top:calc(100% + 8px);min-width:200px;background:var(--color-white);border-radius:8px;
+  box-shadow:var(--shadow-md);padding:8px 0;display:none;list-style:none;
+}
+.has-dropdown[aria-expanded="true"] .dropdown,
+.has-dropdown .dropdown.show { display:block; }
+.dropdown li a{display:block;padding:.5rem 1rem}
+
+/* Hamburger (mobile) */
+.hamburger{display:none;border-radius:8px;padding:.5rem}
+.hamburger .hamburger-box{display:inline-block;width:24px;height:16px;position:relative}
+.hamburger .hamburger-inner, .hamburger .hamburger-inner::before, .hamburger .hamburger-inner::after{
+  display:block;background:var(--color-neutral-900);height:2px;border-radius:2px;position:absolute;left:0;right:0
+}
+.hamburger .hamburger-inner{top:50%;transform:translateY(-50%)}
+.hamburger .hamburger-inner::before{content:"";top:-7px}
+.hamburger .hamburger-inner::after{content:"";top:7px}
+
+/* hero */
+.hero{
+  grid-column: 1 / -1;
+  display:grid;
+  grid-template-columns: 1fr 380px;
+  gap:var(--space-4);
+  align-items:center;
+  padding:var(--space-4);
+}
+.hero .hero-img{width:100%;height:220px;object-fit:cover;border-radius:8px}
+
+/* projects section */
+.projects{padding:var(--space-4) 0}
+
+/* form layout */
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-3)}
+.form-grid label{display:flex;flex-direction:column}
+.form-grid label.full{grid-column:1 / -1}
+
+/* footer */
+.site-footer{padding:var(--space-3) 0;background:transparent;border-top:1px solid rgba(11,15,23,0.04);margin-top:var(--space-4)}
+.muted{color:var(--color-neutral-500);font-size:var(--fs-sm)}
+
+/* component alignment */
+.card-actions{display:flex;gap:var(--space-2);margin-top:var(--space-2)}
+.badges{display:flex;gap:.5rem;margin-top:.5rem}
